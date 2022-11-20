@@ -3,6 +3,7 @@
 
 * Estructura de BD
 
+```
 [^]: const user = {
 [^] > client_id,
 [^] > name,
@@ -17,7 +18,7 @@
 [^] > phone,
 [^] > status      > > >     -el valor es bool (0=al dia con sus pagos, 1=atrasado de pagos)
 }
-
+```
 
 
 * Routes
