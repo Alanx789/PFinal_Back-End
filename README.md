@@ -1,4 +1,4 @@
-﻿# PFinal_Back-End
+﻿# Proyecto Final Desarrollo Web - ATM
 ### En la app se puede iniciar sesión, mostrar la info del usuario, salir de sesión, hacer retiros y pagos
 
 * Estructura de BD
