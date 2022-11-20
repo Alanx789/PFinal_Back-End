@@ -3,7 +3,7 @@
 
 * Estructura de BD
 
-[^] const user = {
+[^]: const user = {
 [^] > client_id,
 [^] > name,
 [^] > lastname,
