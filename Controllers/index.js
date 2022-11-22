@@ -1,4 +1,6 @@
+const FS = require('../firebase');
 let { db } = require('../Data')
+const { dt } = FS;
 
 const LogIn = async(req, res) => {
     try {
@@ -8,6 +10,8 @@ const LogIn = async(req, res) => {
 
         //Ver si existe el usuario en la BD
         const user = db.find( u => u.email == email )
+
+        const DC = dt.collection('dcollections');
 
         if (user == undefined){
 
@@ -46,6 +50,16 @@ const SignIn = async(req, res) => {
 
             //Crear nuevo usuario
             console.log(db)
+
+            const DC = dt.collection('dcollections');
+
+            const { _path: { segments } } = await DC.add({
+                
+                email, 
+                password
+            });
+
+            
 
             //Falta función para generar ID aleatorio
             db = [...db, {
