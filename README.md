@@ -24,8 +24,8 @@ const user = {
 * Routes
 
 1. localhost:3030/api/sign-in
-2. localhost:3030/api/create-account  -le pedirá al usuario sus datos (name, lastname, phone) y el tipo de tarjeta que quiere tener (debit,credit)
-3. localhost:3030/api/main-page       -estaran todos los menus disponibles en la app: mostrar info, pagos, retiros
+2. localhost:3030/api/create-account   -le pedirá al usuario sus datos (name, lastname, phone) y el tipo de tarjeta que quiere tener (debit,credit)
+3. localhost:3030/api/main-page        -estaran todos los menus disponibles en la app: consulta, pagos, retiros
 4. localhost:3030/api/show-info
-5. localhost:3030/api/payments    -solo puede hacer pagos a ciertos servicios (departamentales, tesorería-agua,luz,internet)
+5. localhost:3030/api/payments         -solo puede hacer pagos a ciertos servicios: departamentales, tesorería
 6. localhost:3030/api/withdrawals
