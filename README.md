@@ -6,8 +6,9 @@
 ```
 const user = {
       client_id,
+      email,
+      password,
       name,
-      lastname,
       card: {
           nip,              -este sería "el id" de la tarjeta
           number,
