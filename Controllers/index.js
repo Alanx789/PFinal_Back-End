@@ -1,6 +1,4 @@
-const FS = require('../firebase');
 let { db } = require('../Data')
-const { dt } = FS;
 
 const LogIn = async(req, res) => {
     try {
@@ -11,8 +9,6 @@ const LogIn = async(req, res) => {
         //Ver si existe el usuario en la BD
         const user = db.find( u => u.email == email )
 
-        const DC = dt.collection('dcollections');
-
         if (user == undefined){
 
             //Si no existe marcar error 404
@@ -21,7 +17,7 @@ const LogIn = async(req, res) => {
         } else{
 
             //Verificar si mando la constraseña correcta
-            const message = (password == user.password) ? {status : 202, mensaje : "Ingresaste" } : { status : 406, mensaje : "Intente de nuevo"}
+            const message = (password == user.password) ? {status : 202, user } : { status : 406}
             res.send(message)
         }
     } catch (error) {
@@ -32,48 +28,36 @@ const LogIn = async(req, res) => {
     }
 }
 
-
-
-
 const SignIn = async(req, res) => {
     try {
 
         //Obtener email y contraseña
-        const {body: {email, password}} = req
+        const {body: {email, password, name, phone}} = req
         
         //Buscar si existe un usuario similar
         const user = db.find( u => u.email == email )
         console.log(user)
 
         //Verificar si existe el usuario
-        if (user == undefined){
+        if (user === undefined){
 
             //Crear nuevo usuario
-            console.log(db)
-
-            const DC = dt.collection('dcollections');
-
-            const { _path: { segments } } = await DC.add({
-                
-                email, 
-                password
-            });
-
-            
-
-            //Falta función para generar ID aleatorio
-            db = [...db, {
+            const newUser = {
                 id: 6,
                 email, 
-                password
-            }]
-            console.log(db)
-            res.send( {status : 201} )
+                password,
+                name,
+                phone
+            }
+
+            //Falta función para generar ID aleatorio
+            db = [...db, newUser]
+            res.send( {status : 201, newUser} )
 
         } else{
 
             //Mostrar que ya existe el usuario 
-            res.send({status : 406, mensaje: "Existe"})
+            res.send({status : 406})
 
         }
 
