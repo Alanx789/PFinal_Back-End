@@ -1,7 +1,3 @@
-const FS = require('./firebase');
-const { dt } = FS;
-
-
 const db = [
     { "id" : 1, "email": "ejemplo@hotmail.com", "password" : "12345", 'name':"John"},
     { "id" : 2, "email": "patito@gmail.com", "password" : "abcde", 'name':"Abby" },
@@ -9,9 +5,5 @@ const db = [
     { "id" : 4, "email": "ejecutivo@empresa.com", "password" : "ceo", 'name':"Mike" },
     { "id" : 5, "email": "alumno@up.com.mx", "password" : "contraseña", 'name':"Stephen" }
 ]
-
-const DC = dt.collection('dcollections');
-
-DC.add(db);
 
 module.exports = { db }
