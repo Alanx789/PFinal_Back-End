@@ -49,7 +49,6 @@ const SignIn = async(req, res) => {
                 name,
                 phone
             }
-            console.log(newUser)
 
             //Falta función para generar ID aleatorio
             db = [...db, newUser]

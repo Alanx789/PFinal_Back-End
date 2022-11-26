@@ -1,9 +1,13 @@
-const firebase = require('firebase-admin')
-var serviceAccount = require('../key.json')
+const firebase = require("firebase-admin");
+const serviceAccount = require("../key.json");
 
-module.exports = firebase.initializeApp({
-    credential : firebase.credential.cert(serviceAccount)
-})
+firebase.initializeApp({
+  credential: firebase.credential.cert(serviceAccount)
+});
 
-const db = firebase.firestore()
-module.exports = { db } 
+// Create db and a collection within it
+const db = firebase.firestore();
+
+module.exports = {
+  db
+}
