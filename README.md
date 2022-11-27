@@ -1,6 +1,7 @@
 ﻿# Proyecto Final Desarrollo Web - ATM
 ### En la app se puede iniciar sesión, mostrar la info del usuario, salir de sesión, hacer retiros y pagos
 
+## Es importante que la carpeta del Back-End y Front-End estén en carpetas separadas
 
 Pasos para la instalación del programa localmente:
 ```
