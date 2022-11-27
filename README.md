@@ -15,8 +15,12 @@ Pasos para la instalación del programa localmente:
    b. Escribir en consola las dependencias a usar escribiendo en la consola
       npm i - para instalar node modules
       npm install express firebase cors body-parser nodemon
+   c. Para comenzar a correr la app hay que escribir en consola
+      npm start
    
 ```
+
+## Es importante que los proyecto Back-End y Front-End estén corriendo simultáneamente para que pueda funcionar correctamente
 
 * Estructura de BD
 
@@ -45,8 +49,5 @@ const user_transactions = {
 * Routes
 
 1. localhost:3030/api/sign-in
-2. localhost:3030/api/log-in   
-3. localhost:3030/api/main-page        
-4. localhost:3030/api/show-info
-5. localhost:3030/api/menu        
-6. localhost:3030/api/operations
+2. localhost:3030/api/log-in           
+3. localhost:3030/api/operations   no salio :(
