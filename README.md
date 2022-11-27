@@ -20,6 +20,8 @@ Pasos para la instalación del programa localmente:
    
 ```
 
+## Es importante que los proyecto Back-End y Front-End estén corriendo simultáneamente para que pueda funcionar correctamente
+
 * Estructura de BD
 
 ```
