@@ -4,7 +4,7 @@ const {LogIn, SignIn} = require('../Controllers')
 const router = express.Router()
 
 router.post('/log-in', LogIn)
-router.post('/sign-in', SignIn)
+router.get('/sign-in', SignIn)
 
 
 module.exports = {

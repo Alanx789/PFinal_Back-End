@@ -1,4 +1,6 @@
 let { db } = require('../Data')
+const FS = require('../firebase');
+const { bd } = FS;
 
 const LogIn = async(req, res) => {
     try {
@@ -32,8 +34,20 @@ const SignIn = async(req, res) => {
     try {
 
         //Obtener email y contraseña
-        const {body: {userID, email, password, name, phone}} = req
+        const {body: dc } = req
+
+        const DC = bd.collection('dcollections');
         
+        const { _path: { segments } } = await DC.add({
+            userID: dc.userID, 
+            email: dc.email, 
+            password: dc.password, 
+            name: dc.name, 
+            phone: dc.phone
+        });
+
+        const userID = segments[1];
+
         //Buscar si existe un usuario similar
         const user = db.find( u => u.email == email )
         console.log(user)
