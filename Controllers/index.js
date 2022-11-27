@@ -32,7 +32,7 @@ const SignIn = async(req, res) => {
     try {
 
         //Obtener email y contraseña
-        const {body: {email, password, name, phone}} = req
+        const {body: {userID, email, password, name, phone}} = req
         
         //Buscar si existe un usuario similar
         const user = db.find( u => u.email == email )
@@ -43,14 +43,13 @@ const SignIn = async(req, res) => {
 
             //Crear nuevo usuario
             const newUser = {
-                id: 6,
+                id: userID,
                 email, 
                 password,
                 name,
                 phone
             }
 
-            //Falta función para generar ID aleatorio
             db = [...db, newUser]
             res.send( {status : 201, newUser} )
 
